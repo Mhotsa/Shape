@@ -1,0 +1,19 @@
+#display {
+    border: black solid 1px;
+    background-color: white;
+}
+#body {
+    background-color: skyblue;
+    text-align: center;
+}
+#Show {
+    border: 1px solid black;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Castellar', sans-serif;
+}
+#code {
+    padding: 10px;
+    cursor: pointer;
+}

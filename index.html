@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body id="body">
+        <div class="container">
+            <div>
+                <h1>Shape</h1>
+            </div>
+            <canvas id="display" width="300" height="300"></canvas>
+            <hr>
+            <select id="code">
+                <option>Square</option>
+                <option>Filled Square</option>
+                <option>Circle</option>
+                <option>Filled Circle</option>
+            </select>
+            <button id="Show" class="btn btn-default">Show The Shape</button>
+            <script>
+                document.getElementById("Show").addEventListener("click",function(){
+                    var canvas = document.getElementById("display");
+                    var ctx = canvas.getContext("2d");
+                    var x = document.getElementById("code").value;
+                    if (x == "Square") {
+                        ctx.clearRect(0, 0, 300, 300);
+                        ctx.strokeStyle = "red";
+                        ctx.strokeRect(105, 105, 100, 100);
+                    }
+                    if (x == "Filled Square") {
+                        ctx.clearRect(0, 0, 300, 300);
+                        ctx.fillStyle = "red";
+                        ctx.fillRect(105, 105, 100, 100);
+                    }
+                    if (x == "Filled Circle") {
+                        ctx.clearRect(0, 0, 300, 300);
+                        ctx.beginPath();
+                        ctx.fillStyle = "blue";
+                        ctx.arc(150, 150, 50, 0, 2 * Math.PI);
+                        ctx.fill();
+                    }
+                    if (x == "Circle") {
+                        ctx.clearRect(0, 0, 300, 300);
+                        ctx.beginPath();
+                        ctx.strokeStyle = "blue";
+                        ctx.arc(150, 150, 50, 0, 2 * Math.PI);
+                        ctx.stroke();
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>
